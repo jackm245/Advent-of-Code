@@ -19,7 +19,7 @@ if not(len(sys.argv) == 1):
 
 #  print(day, year)
 webpage = requests.get(f'https://adventofcode.com/{year}/day/{day}/input', cookies={'session' : SESSION})
-print(webpage.text)
+print(webpage.text.strip())
 #  with open(f'{day}.in', 'w') as f:
     #  f.write(webpage.text)
 
