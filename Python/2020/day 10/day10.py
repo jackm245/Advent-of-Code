@@ -1,7 +1,7 @@
 #day 10 .py
 import itertools
 def get_data():
-	with open ('test2.in', 'r') as data_file:
+	with open ('data.in', 'r') as data_file:
 		data = [int(i) for i in data_file]
 	return data
 def part_1():
@@ -38,5 +38,5 @@ def part_2():
 				correct_arrangements.append(sorted_p)
 	print(correct_arrangements)
 	print(len(correct_arrangements))
- 
-part_2()	
+
+part_2()
