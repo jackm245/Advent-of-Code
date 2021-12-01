@@ -4,6 +4,6 @@ day=${2?Error: needs day}
 mkdir Python/$year/day\ $day/
 
 cp template.py Python/$year/day\ $day/$day.py
-python3.9 get_input.py > Python/$year/day\ $day/$day.in
+python3.9 get_input.py $day $year > Python/$year/day\ $day/$day.in
 
 
