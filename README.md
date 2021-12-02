@@ -4,8 +4,8 @@
 ## Usage
 Run
 `. initiate.sh year day`
-To intiate a day. This sets up a template python file, and pulls the days input from advent of Code
-Make sure that the `SESSION` variable in `get_input.py` is your `SESSION` variable, found wwhen inspecting the advent of code websitea.
+To initiate a day. This sets up a template python file, and pulls the days input from advent of Code
+Make sure that the `SESSION` variable in `get_input.py` is your `SESSION` variable, found when inspecting the advent of code website.
 
 ## About this repo
 This repo contains my solutions to the advent of code problems from 2015-2021. I have not solved every problem, but I am slowly working my way through them.
