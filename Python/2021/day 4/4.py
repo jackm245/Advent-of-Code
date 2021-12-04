@@ -11,55 +11,33 @@ def get_data():
 
 
 def part_one(D, B):
-     # for each number
-    for i, num in enumerate(D):
-        # go through board and turn to true if some
+    for num in D:
         for j, board in enumerate(B):
             for k, row in enumerate(board):
                 for l, p in enumerate(row):
                     if p[0] == num:
                         B[j][k][l][1] = True
-        # check to see if one board has one full row or column of marked numbers
-        for j, board in enumerate(B):
-            # for each board
-            # check if row all True
-            win = []
-            # transposed board.
             tboard = list(zip(*board))
-            for row in board:
-                win.append(all([p[1] for p in row]))
-            for col in tboard:
-                win.append(all([q[1] for q in col]))
-            if any(win):
-                s = sum(sum([d[0] for d in row if not d[1]]) for row in board)
-                return s * num
+            wins = [all([p[1] for p in row]) for row in board] + [all([q[1] for q in col]) for col in tboard]
+            if any(wins):
+                return num * sum(sum([d[0] for d in row if not d[1]]) for row in board)
 
 
 def part_two(D, B):
-    # for each number
-    for i, num in enumerate(D):
-        # go through board and turn to true if some
+    for num in D:
         for j, board in enumerate(B):
             for k, row in enumerate(board):
                 for l, p in enumerate(row):
                     if p[0] == num:
                         B[j][k][l][1] = True
-        # check to see if one board has one full row or column of marked numbers
         for j, board in enumerate(B):
-            # for each board
-            # check if row all True
-            win = []
-            # transposed board.
             tboard = list(zip(*board))
-            for row in board:
-                win.append(all([p[1] for p in row]))
-            for col in tboard:
-                win.append(all([q[1] for q in col]))
-            if any(win) and len(B) != 1:
+            wins = [all([p[1] for p in row]) for row in board] + [all([q[1] for q in col]) for col in tboard]
+            if any(wins) and len(B) != 1:
                 del B[j]
-            elif any(win) and len(B) == 1:
-                s  = sum(sum([d[0] for d in row if not d[1]]) for row in B[0])
-                return s*num
+            elif any(wins) and len(B) == 1:
+                return num * sum(sum([d[0] for d in row if not d[1]]) for row in B[0])
+
 
 
 D, B = get_data()
