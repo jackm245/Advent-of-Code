@@ -3,7 +3,10 @@ import requests
 from datetime import datetime
 
 # need to get this from the webpage
-SESSION = '53616c7465645f5f617ba5f45c890a48f31105b2baef2958f5476c4103ba9afc21a6aa3007878a56220a5938a5f2d6ed'
+with open('session.txt', 'r') as s:
+    SESSION = s.readline().strip()
+
+
 # defaults
 day = datetime.now().day
 year = datetime.now().year
