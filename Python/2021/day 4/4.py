@@ -39,7 +39,6 @@ def part_two(D, B):
                 return num * sum(sum([d[0] for d in row if not d[1]]) for row in B[0])
 
 
-
 D, B = get_data()
 print(f'part one: {part_one(D, B)}')
 print(f'part two: {part_two(D, B)}')

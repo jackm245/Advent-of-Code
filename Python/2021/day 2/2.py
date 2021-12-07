@@ -21,7 +21,6 @@ def part_one(L):
     return (r*c)
 
 
-
 def part_two(L):
     r, c = 0, 0
     aim = 0

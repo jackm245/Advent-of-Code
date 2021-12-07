@@ -1,5 +1,6 @@
 import sys
 
+
 def get_data():
     with open(sys.argv[1], 'r') as f:
          L = [int(l.strip()) for l in f]
@@ -21,9 +22,7 @@ def part_two(L):
             count += 1
     return count
 
+
 L = get_data()
 print(f'part one: {part_one(L)}')
 print(f'part two: {part_two(L)}')
-
-
-
