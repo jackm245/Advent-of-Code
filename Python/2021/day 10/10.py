@@ -1,4 +1,5 @@
 import sys
+from collections import deque
 
 
 def get_data():
@@ -10,19 +11,19 @@ def get_data():
 def part_one(L):
     O = ['(', '[', '{', '<']
     C = [')', ']', '}', '>']
-    score = {')':3, ']':57, '}':1197, '>':25137}
+    SCORES  = {')':3, ']':57, '}':1197, '>':25137}
     ans = 0
     for l in L:
-        open = []
+        open = deque()
         for b in l:
             if b in O:
                 open.append(b)
             elif not open or C.index(b) != O.index(open[-1]):
-                ans += score[b]
+                ans += SCORES[b]
                 CORRUPT.append(l)
                 break
             else:
-                del open[-1]
+                open.pop()
     return ans
 
 
@@ -44,10 +45,9 @@ def part_two(L):
                     del open[-1]
                 #  print(open)
         ro = reversed(open)
-        closing = [C[O.index(i)] for i in ro]
-        #  print(closing)
+        close = [C[O.index(i)] for i in ro]
         score = 0
-        for c in closing:
+        for c in close:
             score *= 5
             score += cscore[c]
         if score != 0:
