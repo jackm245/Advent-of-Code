@@ -28,7 +28,7 @@ def part_one(L):
 
 
 def part_two(L):
-    #  print(CORRUPT)
+    # print(CORRUPT)
     O = ['(', '[', '{', '<']
     C = [')', ']', '}', '>']
     cscore = {')':1, ']':2, '}':3, '>':4}
@@ -36,14 +36,14 @@ def part_two(L):
     for l in L:
         open = []
         if l not in CORRUPT:
-            #  print(l)
+            # print(l)
             for b in l:
                 if b in O:
                     open.append(b)
                 else:
-                    #  print(b)
+                    # print(b)
                     del open[-1]
-                #  print(open)
+                # print(open)
         ro = reversed(open)
         close = [C[O.index(i)] for i in ro]
         score = 0
